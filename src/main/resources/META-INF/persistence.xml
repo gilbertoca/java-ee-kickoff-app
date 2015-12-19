@@ -1,25 +1,18 @@
-<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
-
-	<persistence-unit name="kickoffApp">
-		<jta-data-source>java:app/KickoffApp/kickoffDS</jta-data-source>
-
-		<mapping-file>META-INF/User.xml</mapping-file>
-
-		<properties>
-
-			<!-- Hibernate properties -->
-			<property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect" />
-			<property name="hibernate.hbm2ddl.auto" value="update" />
-			
-			 <!-- EclipseLink  -->
-            <property name="eclipselink.ddl-generation" value="create-tables" />
-            <property name="eclipselink.ddl-generation.output-mode" value="database" />
-            <property name="eclipselink.deploy-on-startup" value="true" />
-            
-            <!-- OpenJPA -->
-            <property name="openjpa.jdbc.SynchronizeMappings" value="buildSchema(ForeignKeys=true)"/>
-
-		</properties>
-	</persistence-unit>
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence 
+    version="2.1" 
+    xmlns="http://xmlns.jcp.org/xml/ns/persistence" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+    
+    <persistence-unit name="MyPU">
+        
+        <jta-data-source>java:app/KickoffApp/kickoffDS</jta-data-source>
+        <mapping-file>META-INF/User.xml</mapping-file>
+        
+        <properties>
+            <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
+        </properties>
+        
+    </persistence-unit>
 </persistence>

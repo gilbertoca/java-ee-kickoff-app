@@ -11,9 +11,9 @@ import java.io.IOException;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 import javax.servlet.ServletException;
+import org.omnifaces.security.jaspic.core.AuthParameters;
+import org.omnifaces.security.jaspic.core.Jaspic;
 
-import org.omnifaces.security.jaspic.AuthParameters;
-import org.omnifaces.security.jaspic.Jaspic;
 
 @Named
 @RequestScoped
