@@ -7,5 +7,5 @@
 
 .DS_Store
 rebel.xml
-
+*.log
 /res
